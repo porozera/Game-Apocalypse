@@ -5,7 +5,6 @@ public class Main{
     public static void main(String[] args){
         int pilihanUser;
         String komputer;
-        String pilihan;
         String[] element = {"Manusia","Zombie", "Robot"};
         System.out.println("=================================");
         System.out.println("APOCALYPSE DAY GAME ");
@@ -18,16 +17,13 @@ public class Main{
 
 
         if(pilihanUser == 1){
-            pilihan = element[0];
-            System.out.println("Pilihan anda : "+ pilihan);
+            System.out.println("Pilihan anda : "+ element[0]);
             }
         else if(pilihanUser == 2){
-            pilihan = element[1];
-            System.out.println("Pilihan anda : "+ pilihan);
+            System.out.println("Pilihan anda : "+ element[1]);
             }
         else if(pilihanUser == 3){
-            pilihan = element[2];
-            System.out.println("Pilihan anda : "+ pilihan);
+            System.out.println("Pilihan anda : "+ element[2]);
             }
         else {
             System.out.println("Tidak ada pilihan");
@@ -38,15 +34,15 @@ public class Main{
         int generate = (int) (Math.random()*3+1);
 
         if(generate==1){
-            komputer = "Manusia";
+            komputer = element[0];
             System.out.println("Pilihan Komputer : " + komputer);
         }
         else if(generate==2){
-            komputer = "Zombie";
+            komputer = element[1];
             System.out.println("Pilihan Komputer : " + komputer);
         }
         else{
-            komputer = "Robot";
+            komputer = element[2];
             System.out.println("Pilihan Komputer : " + komputer);
         }
 
