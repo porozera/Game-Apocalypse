@@ -5,27 +5,31 @@ public class Main{
     public static void main(String[] args){
         int pilihanUser;
         String komputer;
+        String player;
         String[] element = {"Manusia","Zombie", "Robot"};
         System.out.println("=================================");
         System.out.println("APOCALYPSE DAY GAME ");
         System.out.println(" 1.MANUSIA \n 2.ZOMBIE \n 3.ROBOT ");
         System.out.println("=================================");
 
-        Scanner input = new Scanner(System.in); 
-        System.out.print("Masukkan Nomor Jagoan Anda: ");
-        pilihanUser = input.nextInt();
-
-
+        try (Scanner input = new Scanner(System.in)) {
+            System.out.print("Masukkan Nomor Jagoan Anda: ");
+            pilihanUser = input.nextInt();
+        } 
         if(pilihanUser == 1){
+            player = element[0];
             System.out.println("Pilihan anda : "+ element[0]);
             }
         else if(pilihanUser == 2){
+            player = element[1];
             System.out.println("Pilihan anda : "+ element[1]);
             }
         else if(pilihanUser == 3){
+            player = element[2];
             System.out.println("Pilihan anda : "+ element[2]);
             }
         else {
+            player = "tidak ada";
             System.out.println("Tidak ada pilihan");
         }
             
@@ -46,36 +50,8 @@ public class Main{
             System.out.println("Pilihan Komputer : " + komputer);
         }
 
-
-
-
-        if (pilihanUser == 1 && komputer == "Manusia"){
-            System.out.println("Hasil : Seri");
-        }
-        else if (pilihanUser == 1 && komputer == "Zombie" ){
-            System.out.println("Hasil : Kalah");
-        }
-        else if (pilihanUser == 1 && komputer == "Robot"){
-            System.out.println("Hasil : Menang");
-        }
-        else if (pilihanUser == 2 && komputer == "Manusia"){
-            System.out.println("Hasil : Menang");
-        }
-        else if (pilihanUser == 2 && komputer == "Zombie"){
-            System.out.println("Hasil : Seri");
-        }
-        else if (pilihanUser == 2 && komputer == "Robot"){
-            System.out.println("Hasil : Kalah");
-        }
-        else if (pilihanUser == 3 && komputer == "Manusia"){
-            System.out.println("Hasil : Kalah");
-        }
-        else if (pilihanUser == 3 && komputer == "Zombie"){
-            System.out.println("Hasil : Menang");
-        }
-        else if (pilihanUser == 3 && komputer == "Robot"){
-            System.out.println("Hasil : Seri");
-        }
-
+        Hasil hasil = new Hasil(player, komputer);
+        hasil.menangKalah();
     }
+
 }
