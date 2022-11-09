@@ -9,13 +9,15 @@ public class Main{
         String[] element = {"Manusia","Zombie", "Robot"};
         System.out.println("=================================");
         System.out.println("APOCALYPSE DAY GAME ");
-        System.out.println(" 1.MANUSIA \n 2.ZOMBIE \n 3.ROBOT ");
+        System.out.println(" 1.MANUSIA \n 2.ZOMBIE \n 3.ROBOT \n 4.EXIT ");
         System.out.println("=================================");
 
+  
         try (Scanner input = new Scanner(System.in)) {
             System.out.print("Masukkan Nomor Jagoan Anda: ");
             pilihanUser = input.nextInt();
-        } 
+
+        while(true){
         if(pilihanUser == 1){
             player = element[0];
             System.out.println("Pilihan anda : "+ element[0]);
@@ -30,9 +32,9 @@ public class Main{
             }
         else {
             player = "tidak ada";
-            System.out.println("Tidak ada pilihan");
+            break;
         }
-            
+    
 
 
         int generate = (int) (Math.random()*3+1);
@@ -52,6 +54,13 @@ public class Main{
 
         Hasil hasil = new Hasil(player, komputer);
         hasil.menangKalah();
-    }
 
-}
+
+        System.out.println("");
+        System.out.print("Masukkan Nomor Jagoan Anda: ");
+        pilihanUser = input.nextInt();
+
+        }   
+        }
+    }
+ }
