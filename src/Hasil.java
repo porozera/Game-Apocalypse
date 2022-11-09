@@ -3,15 +3,13 @@ public class Hasil {
     public String player;
     public String komputer;
 
+
     public Hasil (String player , String komputer){
         this.player = player;
         this.komputer = komputer;
     }
 
     public void menangKalah(){
-        if (player == "Manusia" && komputer == "Manusia"){
-           System.out.println("Hasil : Seri");
-        }
         if (player == "Manusia" && komputer == "Manusia"){
             System.out.println("Hasil : Seri");
         }
@@ -39,6 +37,10 @@ public class Hasil {
         else if (player == "Robot" && komputer == "Robot"){
             System.out.println("Hasil : Seri");
         }
-
+        else if (player == "Tidak ada pilihan"){
+            System.out.println("Tidak ada hasil");
+        }
+    
     }
+
 }
