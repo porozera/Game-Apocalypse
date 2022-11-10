@@ -59,6 +59,7 @@ public class Main{
             }
         else {
             player = "tidak ada";
+            System.out.println("Terimakasih telah bermain");
             break;
         }
     
